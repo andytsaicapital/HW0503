@@ -1,0 +1,77 @@
+/*animation example*/
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: gold;
+    border-radius: 10%;
+}
+
+@keyframes abc{     
+    0% { 
+        left:0px;
+        top:0px;
+        background: red;
+    }
+    25% {
+        left:100px;
+        top: 0px;
+        background: gold;
+    }
+    50% {
+        left:100px;
+        top: 100px;
+        background: lightblue;
+    }
+    75% {
+        left:0px;
+        top: 100px;
+        background: lightgreen;
+    }
+    100% {
+        left:0px;
+        top:0px;
+        background: red;
+    }
+}
+
+.outer-box {
+    width: 200px;
+    height: 200px;
+    border: 2px solid navy;
+    position: relative;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+    /* 使用系統預設得時間函數    */
+    /*    animation: 4s abc 5 ease-in;*/
+    /* 自訂時間函數    */
+    animation: 4s abc infinite cubic-bezier(.32,.57,.35,1.28);
+}
+
+
+/*
+.box{
+  width:100px;
+  height: 100px;
+  background: gold;
+  border-radius: 10%;
+  margin: 30vh auto 0;
+  animation: 2s  pulse 5 ;
+}*/
